@@ -802,27 +802,27 @@ These VMs are connected via a VPN (Wireguard) for secure communication. The load
 ## Challenges Encountered and Solutions
 
 ### YAML Configuration Issues
-**Challenge**: Configuring the netplan YAML file proved difficult due to strict spacing requirements.
+**Challenge**: Configuring the netplan YAML file proved difficult due to strict spacing requirements.\
 **Solution**: Learned that YAML is space-sensitive and each indentation level must be consistent. Used a YAML validator to check syntax before applying changes.
 
 ### Networking Connectivity Problems
-**Challenge**: Initially encountered issues with VMs not being able to communicate.
+**Challenge**: Initially encountered issues with VMs not being able to communicate.\
 **Solution**: Systematically verified each networking component: static IPs, firewall rules, hostname resolution, and physical network connectivity. Found that a misconfigured IP address (typo) was causing the issue.
 
 ### Resource Constraints
-**Challenge**: VMs created with insufficient disk space for expanding needs.
+**Challenge**: VMs created with insufficient disk space for expanding needs.\
 **Solution**: When possible, allocate more disk space than immediately needed. Adding disk space to an existing VM is complex and risky – during an attempt to add more space, accidentally deleted a VM.
 
 ### Monitoring Configuration
-**Challenge**: Setting up NetData to display all nodes in one dashboard required careful configuration.
+**Challenge**: Setting up NetData to display all nodes in one dashboard required careful configuration.\
 **Solution**: Used a parent-child architecture with the load balancer as the central monitoring point. Confirmed each step with testing before proceeding to the next node.
 
 ### Load Balancer Testing
-**Challenge**: Difficult to confirm load balancing was working properly.
+**Challenge**: Difficult to confirm load balancing was working properly.\
 **Solution**: Created unique index.html files on each web server to visually confirm which server was handling each request. Used multiple browser sessions to verify the distribution of requests.
 
 ### Fail2Ban Configuration
-**Challenge**: Initial configuration was too aggressive, resulting in legitimate access being blocked.
+**Challenge**: Initial configuration was too aggressive, resulting in legitimate access being blocked.\
 **Solution**: Started with a shorter ban time (60 seconds) for testing, then adjusted the parameters based on observed behavior. Found that setting maxretry=3 and findtime=600 provided a good balance of security without blocking legitimate access.
 
 ## Usage Guide
