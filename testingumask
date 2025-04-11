@@ -1,0 +1,5 @@
+1. sudo nano /home/test/umasktest
+2. su test
+3. cat umasktest
+4. nano umasktest
+5. sudo nano umasktest
